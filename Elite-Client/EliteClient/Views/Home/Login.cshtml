@@ -1,0 +1,58 @@
+﻿
+
+<div class="form-modal">
+
+    <div class="form-toggle">
+        <button id="login-toggle" onclick="toggleLogin()">log in</button>
+        <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+    </div>
+
+    <div id="login-form">
+        <form>
+            <input type="text" id="login_phone" placeholder="Enter phone number" />
+            <input type="password" id="login_password" placeholder="Enter password" />
+            <button type="button" class="btn login" id="btn_login">login</button>
+            <p><a href="javascript:void(0)" onclick="toggleSignup()">Register Account</a> </p>
+
+        </form>
+    </div>
+
+    <div id="signup-form">
+        <form>
+            <input type="text" id="reg_name" placeholder="Enter your name" />
+            <input type="email" id="reg_email" placeholder="Enter your email" />
+            <input type="text" id="reg_phone" placeholder="Enter phone" />
+            <input type="password" id="reg_password" placeholder="Enter Password" />
+            <input type="password" id="reg_password2" placeholder="Re-enter Password" />
+            <button type="button" class="btn signup" id="btn_register">
+                <i class="fa fa-spinner fa-pulse"></i> create account
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+    function toggleSignup() {
+        document.getElementById("login-toggle").style.backgroundColor = "#fff";
+        document.getElementById("login-toggle").style.color = "#222";
+        document.getElementById("signup-toggle").style.backgroundColor = "#57b846";
+        document.getElementById("signup-toggle").style.color = "#fff";
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("signup-form").style.display = "block";
+    }
+
+    function toggleLogin() {
+        document.getElementById("login-toggle").style.backgroundColor = "#57B846";
+        document.getElementById("login-toggle").style.color = "#fff";
+        document.getElementById("signup-toggle").style.backgroundColor = "#fff";
+        document.getElementById("signup-toggle").style.color = "#222";
+        document.getElementById("signup-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+    }
+</script>
+
+@section scripts {
+    <script src="~/js/account.js"></script>
+}

@@ -1,0 +1,22 @@
+
+{
+    "region" : "ca-central-1",
+    "configuration" : "Debug",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "EliteWebAPI",
+    "environment"    : "EliteWebAPI-dev",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.1.0 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "loadbalancer-type"    : "application",
+    "cname"                : "elite-insurance-api",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "elite-api-key-pair",
+    "health-check-url"     : "/",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Home">Elite</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Insurance">Insurance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" style="align-items : end" asp-controller="Home" asp-action="LogOut">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <i class="icon-calendar"></i>
+        <h3 class="panel-title">Create Insurance</h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-12">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="region_dropdown">Region</label>
+                        <select class="form-control" id="region_dropdown" onchange="insurance.getAllCompanies();">
+                            <option value="0">Select Region</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="company_dropdown">Company</label>
+                        <select class="form-control" id="company_dropdown">
+                            <option value="0">Select Company</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="make_dropdown">Make</label>
+                        <select class="form-control" id="make_dropdown" onchange="insurance.getAllModels();">
+                            <option value="0">Select Make</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="model_dropdown">Model</label>
+                        <select class="form-control" id="model_dropdown">
+                            <option value="0">Select Model</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="year">Year</label>
+                        <input type="number" class="form-control" id="year" placeholder="Year">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Phone">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="amount">Amount(USD)</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Amount (USD)">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="note">Note</label>
+                        <input type="text" class="form-control" id="note" placeholder="Note">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <button type="button" class="btn btn-primary form-control" id="btn_create">Calculate Rate</button>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button type="reset" class="btn btn-danger btn-block">Reset</button>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <a>Your Annual Insurance Amount (USD): </a>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="number" class="form-control" id="annualFee" readonly="readonly" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/insurance.js"></script>
+}
